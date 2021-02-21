@@ -1,4 +1,4 @@
-#perform tokenisation and define a training function
+#perform tokenisation and define a training function. 
 def train_w2v(path,outpath):
     data=[i.strip() for i in open(path)]
     data=[i.split(" ") for i in data]
@@ -11,7 +11,7 @@ def train_w2v(path,outpath):
 w2v1=train_w2v("ccoha1.txt","w2v1")
 w2v2=train_w2v("ccoha2.txt","w2v2")
 
-#compute the cosine similarity of target words
+#compute the cosine similarity of target words. 
 import numpy as np
 t1  = np.array([-0.4,0.8,0.5,-0.2,0.3])
 t2  = np.array([-0.5,0.4,-0.2,0.7,-0.1])
