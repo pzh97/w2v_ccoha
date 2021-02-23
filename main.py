@@ -6,7 +6,7 @@ import pandas as pd
 def train_w2v(path,outpath):
     data=[i.strip() for i in open(path)]
     data=[i.split(" ") for i in data]
-    w2v_model1 = gensim.models.Word2Vec(data, size=128, iter=10, min_count=0)
+    w2v_model1 = gensim.models.Word2Vec(data, size=300, window = 8, iter=10, min_count=0, negative = 20)
     word_vectors1 = w2v_model1.wv
     w2v_model1.save(outpath)
     w2v_model1=gensim.models.Word2Vec.load(outpath)
