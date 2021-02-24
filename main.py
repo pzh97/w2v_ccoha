@@ -14,6 +14,7 @@ def train_w2v(path,outpath):
 w2v1=train_w2v("ccoha1.txt","w2v1")
 w2v2=train_w2v("ccoha2.txt","w2v2")
 
+#perform orthogonal procrustes to align matrices
 def smart_procrustes_align_gensim(base_embed, other_embed, words=None):
     
     base_embed.init_sims()
@@ -71,13 +72,12 @@ def intersection_align_gensim(m1,m2, words=None):
             old_vocab_obj=old_vocab[word]
             new_vocab[word] = gensim.models.word2vec.Vocab(index=new_index, count=old_vocab_obj.count)
         m.wv.vocab = new_vocab
+     return (m1,m2)
 
-    return (m1,m2)
 from gensim.models import Word2Vec
 model_1 = Word2Vec.load("w2v1")
 model_2 = Word2Vec.load("w2v2")
 smart_procrustes_align_gensim(model_1, model_2, words=None)
-
 
 #compute the cosine similarity of target words
 t1  = np.array([-0.4,0.8,0.5,-0.2,0.3])
