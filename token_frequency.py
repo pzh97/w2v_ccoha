@@ -7,7 +7,7 @@ def tokenise(corpus):
 	corpus = data.split(' ')
 	return corpus
 
-#define a function that counts the token number of corpora
+#define a function that counts the token numbers of corpora
 def count(data):
     data = tokenise(data)
     fdist1 = nltk.FreqDist(data)
@@ -15,7 +15,7 @@ def count(data):
 count('ccoha1.txt')
 count('ccoha2.txt')
 
-#define a function that counts the token frequency of a list of target words
+#define a function that counts the token frequencies of a list of target words
 def countvoc(corpus, targets):
     corpus = tokenise(corpus)
     fdist1 = nltk.FreqDist(corpus)
