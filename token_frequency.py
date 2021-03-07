@@ -19,7 +19,7 @@ count('ccoha2.txt')
 def countvoc(corpus, targets):
     corpus = tokenise(corpus)
     fdist1 = nltk.FreqDist(corpus)
-    targets=[i.strip() for i in open("targets.txt")]
+    targets=[i.strip() for i in open('targets.txt')]
     freq=[]
     for i in targets:
         freq.append(fdist1[i])
