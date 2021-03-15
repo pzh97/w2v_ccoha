@@ -2,7 +2,7 @@
 library("dplyr")
 library("ggpubr")
 library("ggplot2")
-library(moments)
+library("moments")
 
 #check the normality of continuous variables 
 my_data <- read.csv(file.choose())
