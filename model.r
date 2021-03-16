@@ -31,3 +31,20 @@ ggdensity(my_data, x = "polysemy", fill = "lightgray", title = "POLY") +
 #fit a binary logistic regression model
 model1 <- glm(change ~ my_data$frequency + my_data$polysemy + technology, data = my_data, family = binomial())
 summary(model1)
+
+###################################################################################################################
+#ctree: run separately!
+library("party")
+library("plyr")
+library("readr")
+
+mydata <- read_csv("untitled copy.csv", col_names = FALSE)
+mydata<-rename(mydata, c("X1"="mydata.change", "X2"="mydata.frequency", "X3"="mydata.polysemy", "X4"="mydata.technology"))
+mydata$mydata.change<-as.factor(mydata$mydata.change) 
+mydata$mydata.frequency<-as.factor(mydata$mydata.frequency) 
+mydata$mydata.polysemy<-as.factor(mydata$mydata.polysemy) 
+mydata$mydata.technology<-as.factor(mydata$mydata.technology) 
+summary(mydata)
+tree<-ctree(mydata.change~mydata.frequency + mydata.polysemy + mydata.technology, data=mydata)
+plot(tree)
+####################################################################################################################
