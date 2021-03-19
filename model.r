@@ -48,3 +48,12 @@ summary(mydata)
 tree<-ctree(mydata.change~mydata.frequency + mydata.polysemy + mydata.technology, data=mydata)
 plot(tree)
 ####################################################################################################################
+#correlation test
+library(Hmisc)
+
+mydata<-read.csv(file.choose())
+mydata<-mydata[, c(2,3,4)]
+head(mydata, 6)
+res<-rcorr(as.matrix(mydata))
+####################################################################################################################
+res
