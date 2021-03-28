@@ -25,8 +25,6 @@ skewness(my_data$polysemy, na.rm = TRUE)
 #plot normality after transformation
 ggdensity(my_data, x = "frequency", fill = "lightgray", title = "FREQ") +
   stat_overlay_normal_density(color = "red", linetype = "dashed")
-ggdensity(my_data, x = "polysemy", fill = "lightgray", title = "POLY") +
-  stat_overlay_normal_density(color = "red", linetype = "dashed")
 
 #fit a binary logistic regression model
 model1 <- glm(change ~ my_data$frequency + my_data$polysemy + technology, data = my_data, family = binomial())
