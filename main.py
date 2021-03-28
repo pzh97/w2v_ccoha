@@ -1,10 +1,20 @@
 import gensim
 import numpy as np
 import pandas as pd
+import nltk
+
+#pos tag corpora
+def get_pos(text='And now for something completely different'):
+    text=" ".join([i.split("_")[0] for i in text.split(" ") ])
+    words = nltk.word_tokenize(text)
+    # print(words)
+    word_tag = nltk.pos_tag(words)
+    return " ".join([i[0]+"_"+i[1] for i in word_tag])
 
 #define a training function
 def train_w2v(path,outpath):
     data=[i.strip() for i in open(path)]
+    data=[get_pos(i.strip()) for i in data]
     data=[i.split(" ") for i in data]
     w2v_model1 = gensim.models.Word2Vec(data, size=300, window = 8, iter=10, min_count=0, negative = 20)
     word_vectors1 = w2v_model1.wv
