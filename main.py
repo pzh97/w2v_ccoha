@@ -87,7 +87,7 @@ def intersection_align_gensim(m1,m2, words=None):
 from gensim.models import Word2Vec
 model_1 = Word2Vec.load("w2v1")
 model_2 = Word2Vec.load("w2v2")
-smart_procrustes_align_gensim(model_1, model_2, words=None)
+model_2 = smart_procrustes_align_gensim(model_1, model_2, words=None)
 
 #compute the cosine similarity of target words
 t1  = np.array([-0.4,0.8,0.5,-0.2,0.3])
