@@ -4,7 +4,7 @@
 
 2. The output of `main.py` is a `.csv` file, which includes the cosine similarity of the same word from these two different corpora. The trained vectors of these two corpora will also be outputed in the `.npy` files.
 
-3. The training process takes roughly *ten minutes*. To run the `main.py`, please put `ccoha1.txt`, `ccoha2.txt` and `targets.txt` with the `main.py` in the same folder. **One Caveat**: the results may vary because each time you run the code, it trains the vectors from the scratch. If you want the results (i.e. cosine similarity) to be consistent, please place a hashtag at the beginning of the code in line 11.
+3. The training process takes roughly *thirty minutes*. To run the `main.py`, please put `ccoha1.txt`, `ccoha2.txt` and `targets.txt` with the `main.py` in the same folder. **One Caveat**: the results may vary because each time you run the code, it trains the vectors from the scratch. If you want the results (i.e. cosine similarity) to be consistent, please place a hashtag at the beginning of the code in line 11.
 
 ```
 line 11: #w2v_model1.save(outpath)
