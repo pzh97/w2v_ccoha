@@ -27,3 +27,14 @@ ggdensity(my_data, x = "frequency", fill = "lightgray", title = "FREQ") +
 #fit a binary logistic regression model
 model1 <- glm(change ~ my_data$frequency + my_data$polysemy + technology, data = my_data, family = binomial())
 summary(model1)
+
+#goodness-of-fit
+model2 <- glm(change ~  pos, data = my_data, family = binomial())
+model3 <- glm(change ~ technology + pos, data = my_data, family = binomial())
+model4 <- glm(change ~ polysemy+technology + pos, data = my_data, family = binomial())
+a<-model3$deviance-model4$deviance
+b<-model3$df.residua-model4$df.residual
+chisq.prob<-1-pchisq(a,b)
+chisq.prob
+a
+b
