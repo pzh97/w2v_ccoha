@@ -34,7 +34,7 @@ df.to_csv("res2.csv",header=True,index=False,encoding="utf-8-sig")
 # word=[i.strip().split("_")[0] for i in open("targets.txt")]
 word=[i.strip() for i in open("targets.txt")]
 d_word={}
-for i in ci:
+for i in word:
     d_word[i]=0
 
 
