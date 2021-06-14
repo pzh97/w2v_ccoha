@@ -57,9 +57,4 @@ def frequency(path,d_word,outpath):
                w.write(str(i[0])+" "+str(i[1])+"\n")
     
 frequency("ccoha1.txt",d_word,"frequency1.txt")
-
 frequency("ccoha2.txt",d_word,"frequency2.txt")
-
-
-
-
