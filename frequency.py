@@ -31,6 +31,8 @@ df.to_csv("res1.csv",header=True,index=False,encoding="utf-8-sig")
 df=pd.DataFrame()
 df["w2v2"]=w2v2.wv.index2word
 df.to_csv("res2.csv",header=True,index=False,encoding="utf-8-sig")
+
+
 # word=[i.strip().split("_")[0] for i in open("targets.txt")]
 word=[i.strip() for i in open("targets.txt")]
 d_word={}
@@ -57,6 +59,7 @@ def frequency(path,d_word,outpath):
 frequency("ccoha1.txt",d_word,"frequency1.txt")
 
 frequency("ccoha2.txt",d_word,"frequency2.txt")
+
 
 
 
