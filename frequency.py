@@ -54,9 +54,9 @@ def frequency(path,d_word,outpath):
         for i in tmpd_word:
                w.write(str(i[0])+" "+str(i[1])+"\n")
     
-frequency("ccoha1.txt",d_word,"cipin1.txt")
+frequency("ccoha1.txt",d_word,"frequency1.txt")
 
-frequency("ccoha2.txt",d_word,"cipin2.txt")
+frequency("ccoha2.txt",d_word,"frequency2.txt")
 
 
 
